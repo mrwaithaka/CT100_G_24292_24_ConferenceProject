@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Conference Calculations Form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="split-screen">
+    <!-- Left Half: Calculating Cat Code Layout Panel -->
+    <div class="left-panel">
+        <img src="image_rQDGa6.png" alt="Dynamic Computational Processing UI Graphic">
+    </div>
+
+    <!-- Right Half: Form Inputs Content Stream -->
+    <div class="right-panel scrollable-form">
+        <h2 style="margin-bottom: 1.5rem; font-weight: 400; font-size: 2rem;">Conference Registration</h2>
+        
+        <form id="registrationForm" action="process.php" method="POST" novalidate>
+            
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName">
+                <div class="error-msg" id="nameError">Full name cannot be empty.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="adminNo">Admission/Registration Number *</label>
+                <input type="text" id="adminNo" name="adminNo">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email">
+                <div class="error-msg" id="emailError">Please enter a valid email format pattern string.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number (10 Digits) *</label>
+                <input type="text" id="phone" name="phone" placeholder="e.g. 0712345678">
+                <div class="error-msg" id="phoneError">Phone number must contain exactly 10 digits.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="yearOfStudy">Year of Study</label>
+                <select id="yearOfStudy" name="yearOfStudy">
+                    <option value="1">Year 1</option>
+                    <option value="2">Year 2</option>
+                    <option value="3">Year 3</option>
+                    <option value="4">Year 4</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Participation Category *</label>
+                <select id="category" name="category">
+                    <option value="">-- Select Category --</option>
+                    <option value="Conference Only">Conference Only</option>
+                    <option value="Workshop Participant">Workshop Participant</option>
+                </select>
+                <div class="error-msg" id="categoryError">Please choose an active category value selection.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="days">Number of Conference Days (1-3) *</label>
+                <input type="number" id="days" name="days" min="1" max="3" value="1">
+                <div class="error-msg" id="daysError">Number of days must sit within 1 to 3 boundaries range.</div>
+            </div>
+
+            <!-- Dynamic Sub-Options Field Block Wrapper Container -->
+            <div class="form-group hidden" id="workshopGroup">
+                <label for="workshop">Select Workshop Track Theme Topic</label>
+                <select id="workshop" name="workshop">
+                    <option value="None">None</option>
+                    <option value="Web Development">Web Development (KSh 750)</option>
+                    <option value="Data Science & AI">Data Science & AI (KSh 750)</option>
+                    <option value="Cybersecurity Basics">Cybersecurity Basics (KSh 750)</option>
+                </select>
+            </div>
+
+            <div class="form-group" style="margin-top: 1.5rem;">
+                <label style="font-weight: normal; cursor: pointer;">
+                    <input type="checkbox" id="catering" name="catering" value="Yes"> Include Lunch Catering Services (KSh 300 / day)
+                </label>
+            </div>
+
+            <!-- Custom assignment rule 1 condition verification option -->
+            <div class="form-group">
+                <label style="font-weight: normal; cursor: pointer;">
+                    <input type="checkbox" id="accommodation" name="accommodation" value="Yes"> Include Campus Accommodation Track (KSh 1,500 / night)
+                </label>
+            </div>
+
+            <div class="fee-box">
+                Total Amount Due: KSh <span id="totalFeeDisplay">1,000</span>
+            </div>
+
+            <button type="submit" class="btn-register" style="width: 100%; border-radius: 4px;">Submit Secure Application</button>
+        </form>
+        
+        <p style="margin-top: 1.5rem; text-align: center;"><a href="index.html" style="color: var(--text-main); font-size: 0.9rem;">← Back to Home Overview</a></p>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
