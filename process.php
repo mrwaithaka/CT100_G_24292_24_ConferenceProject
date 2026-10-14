@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </head>
     <body>
         <div class="container success-card">
-            <h2 style="color: #28a745; text-align:center;">🎉 REGISTRATION SUCCESSFUL</h2>
+            <h2 style="color: #28a745; text-align:center;"> REGISTRATION SUCCESSFUL</h2>
             <p>Thank you for registering for the <strong>Student Technology and Innovation Conference</strong>. Below is your verified itinerary configuration detail summary breakdown.</p>
             
             <h3>Participant Details</h3>
